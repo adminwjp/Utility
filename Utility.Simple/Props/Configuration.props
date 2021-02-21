@@ -1,0 +1,7 @@
+<Project>
+  <!-- Configuration net10 - net48(cs(winform,wpf):netcoreapp3.0 - net5.0) -->
+  <ItemGroup Condition="  '$(TargetFramework)' == 'net10' OR   '$(TargetFramework)' == 'net20' OR  '$(TargetFramework)' == 'net30' OR '$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'  OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48'  ">
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+
+</Project>

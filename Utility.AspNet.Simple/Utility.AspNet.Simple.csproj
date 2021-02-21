@@ -1,0 +1,137 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- ServiceFabric  netcoreapp2.0 - net5.0 -->
+  <!--
+  <Import Project="Props\ServiceFabric.props" />
+  -->
+  <!-- consul  NET45 - NET48  netcoreapp2.0 - net5.0 netstandard1.3 - netstandard2.1 -->
+  <Import Project="Props\Consul.props" />
+  <!-- asp.net NET45 - NET48 -->
+  <Import Project="Props\UrlRewrite.props" />
+  <!-- asp.net core netcoreapp2.0 - net5.0 -->
+  <Import Project="Props\zipkin4net.props" />
+  <!-- asp.net autofac NET45 - NET48 -->
+  <Import Project="Props\Autofac.props" />
+  <!-- asp.net autofac NET45 - NET48 -->
+  <Import Project="Props\Swashbuckle.props" />
+  <!--  Serilog asp.net core 2.0 - 5.0 -->
+  <Import Project="Props\Serilog.props" />
+  <PropertyGroup>
+    <!--<TargetFrameworks>net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1;net5.0;</TargetFrameworks>-->
+    <TargetFrameworks>net5.0;</TargetFrameworks>
+
+
+    <RepositoryUrl>E:\work\Package\Utility.AspNet.Simple</RepositoryUrl>
+    <Version>1.0.0.2</Version>
+    <OutputPath>E:\work\Package\Utility.AspNet.Simple</OutputPath>
+    <DocumentationFile>e:\work\Package\Utility.AspNet.Simple\Utility.AspNet.Simple.xml</DocumentationFile>
+    <!-- Swashbuckle  起冲突  -->
+    <OpenApiGenerateDocumentsOnBuild Condition=" '$(OpenApiGenerateDocumentsOnBuild)' == '' ">false</OpenApiGenerateDocumentsOnBuild>
+    <Authors>wjp</Authors>
+    <RootNamespace>Utility</RootNamespace>
+  </PropertyGroup>
+
+  <!-- ef 冲突 WindowsServices 冲突 -->
+  <!--  netcoreapp2.0 - net5.0 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0' OR '$(TargetFramework)' == 'netcoreapp2.1' OR '$(TargetFramework)' == 'netcoreapp2.2'  OR '$(TargetFramework)' == 'netcoreapp3.0' OR '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0' ">
+
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
+    <!-- 健康检查 -->
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.0.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="3.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="3.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="3.0.0" />
+    <!--<PackageReference Include="AspNetCore.HealthChecks.MySql" Version="3.2.0" />-->
+    <!-- 兼容 ef core mysql -->
+    <PackageReference Include="AspNetCore.HealthChecks.MySql" Version="3.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.Elasticsearch" Version="3.0.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.Sqlite" Version="3.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.Oracle" Version="3.1.2" />
+
+    <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="2.0.0" />
+
+
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.3" />
+  </ItemGroup>
+
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0' ">
+    <!-- 健康检查 -->
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="3.2.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="3.1.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="3.1.1" />
+    <!--<PackageReference Include="AspNetCore.HealthChecks.MySql" Version="3.2.0" />-->
+    <!-- 兼容 ef core mysql -->
+    <PackageReference Include="AspNetCore.HealthChecks.MySql" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.Elasticsearch" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.Sqlite" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.Oracle" Version="3.1.2" />
+
+    <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="2.5.1" />
+
+
+
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1' OR '$(TargetFramework)' == 'netcoreapp2.2'  ">
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <!-- netcoreapp2.0 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="2.3.0" />
+
+
+  </ItemGroup>
+
+  <!-- netcoreapp2.1 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1'">
+    <!--<PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />-->
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="2.3.0" />
+  </ItemGroup>
+
+  <!-- netcoreapp2.2 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
+    <!--<PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />-->
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.6" />
+  </ItemGroup>
+
+  <!-- netcoreapp3.0 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+    <!--<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />-->
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="3.0.3" />
+
+  </ItemGroup>
+
+  <!-- netcoreapp3.1 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <!--<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />-->
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.10" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.10" />
+
+  </ItemGroup>
+
+  <!-- net5.0 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Utility.Simple\Utility.Simple.csproj" />
+  </ItemGroup>
+</Project>
+

@@ -1,0 +1,7 @@
+<Project>
+  <!-- net web service net35 - net48 -->
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48'  ">
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+</Project>

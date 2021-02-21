@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>c947a847-0107-42ca-a2a6-ac64ec83164d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Utility.Simple.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net10'  OR  '$(TargetFramework)' == 'net11' OR '$(TargetFramework)' == 'net20'  OR '$(TargetFramework)' == 'net30' OR '$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'  OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48'  ">
+    <Compile Include="$(MSBuildThisFileDirectory)Remote\DAL\RemoteDAL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Remote\IObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Remote\Object.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Remote\RemoteManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Remote\RemoteServerManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ConfigUtils.cs" />
+  </ItemGroup>
+  <!-- net45 - net48 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'  OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48'  ">
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\**\*.cs" Link="Shared\Mong\%(Filename)%(Extension)"/> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\Channels\IServiceApiChannel.cs" Link="Wcf\Channels\IServiceApiChannel.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\Channels\IServiceChannel.cs" Link="Wcf\Channels\IServiceChannel.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\ClientImpl\ServiceApiClient.cs" Link="Wcf\ClientImpl\ServiceApiClient.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\ClientImpl\ServiceClient.cs" Link="Wcf\ClientImpl\ServiceClient.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\Client\IServiceApiClient.cs" Link="Wcf\Client\IServiceApiClient.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\Client\IServiceClient.cs" Link="Wcf\Client\IServiceClient.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\DAL\WcfDAL.cs" Link="Wcf\DAL\WcfDAL.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\ServerHelper.cs" Link="Wcf\ServerHelper.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\ServiceImpl\Service.cs" Link="Wcf\ServiceImpl\Service.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\ServiceImpl\ServiceApi.cs" Link="Wcf\ServiceImpl\ServiceApi.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\Service\IService.cs" Link="Wcf\Service\IService.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\Service\IServiceApi.cs" Link="Wcf\Service\IServiceApi.cs" /> -->
+    <!-- <Compile Include="..\Shared\Utility.Wcf.Shared\Wcf\WcfManager.cs" Link="Wcf\WcfManager.cs" /> -->
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\Channels\IServiceApiChannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\Channels\IServiceChannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\ClientImpl\ServiceApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\ClientImpl\ServiceClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\Client\IServiceApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\Client\IServiceClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\DAL\WcfDAL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\ServerHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\ServiceImpl\Service.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\ServiceImpl\ServiceApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\Service\IService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\Service\IServiceApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wcf\WcfManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Application\IntegrationEvents\IIntegrationEventService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Application\Services\ApplicationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Application\Services\Dtos\EntityDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Application\Services\Dtos\OrderSortDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Application\Services\Dtos\PageRequestDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Application\Services\Dtos\PageResultDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Application\Services\Dtos\ResultDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Application\Services\IApplicationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AspNet\Aspxs\BaseAspx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AspNet\Handlers\BaseHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AspNet\RequestParamHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AspNet\WebServices\BaseWebService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Attributes\HeaderAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Base64\Base64Helper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BLL\BLL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BLL\ResponseApiBLLHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BLL\BLLHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BLL\ResponseApiBLL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\BaseCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\CacheContentReflect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\CacheProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\EnyimMemcachedContentReflect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\ICacheContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\NetCoreCacheReflect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\NetFrameWorkCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\NetFrameWorkCacheReflect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\ObjectCacheProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\SimpleCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\SimpleConcurrentCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomDelegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\Array.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\Collection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\CollectionHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\SortHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\BaseDAL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\DAL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\DALHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\DALManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Descs\DescAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Descs\DescHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Entities\BaseEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Entities\DeleteEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Entities\Entity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Entities\IHasCreationTime.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Entities\IHasDeletionTime.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Entities\IHasModificationTime.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Entities\SelectedEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Entities\ICascade.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Repositories\BaseRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Repositories\IRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Services\DomainService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Services\IDomainService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Uow\IAsynUnitWorkManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Uow\IUnitWork.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Uow\IUnitWorkManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Code.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Language.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Event\Abstractions\IDynamicIntegrationEventHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Event\Abstractions\IEventBus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Event\Abstractions\IIntegrationEventHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Event\Events\IntegrationEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Event\Extensions\GenericTypeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Event\IEventBusSubscriptionsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Event\InMemoryEventBusSubscriptionsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Event\SubscriptionInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\LinqExpression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hex\HexHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IntegrationEventLog\EventStateEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IntegrationEventLog\IntegrationEventLogEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IntegrationEventLog\Services\IIntegrationEventLogService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Ioc\EmptyIocManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Ioc\IIocManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\FileHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\StreamHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\Extensions\JsonExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\IJson.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\JsonContractResolver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\JsonHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\JsonHelper.Default.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\JsonPropertyNamingPolicy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logs\DefaultLog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logs\ILog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Menu\ConstractorEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Menu\MenuEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Menu\MenuHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DeleteModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Model.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\PageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ResultModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SelectModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\CookieHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\EmailHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\FtpHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\ContentTypeConstant.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\DefaultHttpCollect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\EncdoingConstant.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\HttpClientWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\HttpEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\HttpHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\HttpMethod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\HttpMethodAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\HttpResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\HttpRetunnResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\IHttpCollect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\ProtocolCheck.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Http\RequestParamParse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\SendEmail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\AsyncUserToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\BaseSocket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\BaseTcpService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\BufferManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\NetworkHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\SocketAsyncEventArgsPool.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\SocketClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\SocketManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\SocketServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\TcpClientHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Sockets\TcpListenerHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObjectMapping\DefaultObjectMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObjectMapping\EmptyObjectMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObjectMapping\IObjectMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\PageHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugin\IPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pool\ConnectionPool.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pool\IObjectPool.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pool\ObjectEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pool\ObjectPool.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pool\ObjectState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Randoms\RandomHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Randoms\RandomService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reflect\ReflectHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Regexs\Extensions\RegexExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Regexs\RegexHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Response\DefaultResponseMiddleware.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Response\IResponseApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Response\IResponseMiddleware.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Response\ResponseApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Result\ResultApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Script\JintReflect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Security\Extensions\SecurityExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Security\SecurityHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threads\TaskHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threads\TaskQueue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threads\ThreadHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tool\DockerCmdHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tool\DockerHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tool\PlatformHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tool\StringHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\AttributeUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\CmdUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\DateUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\DownUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ExceptionUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\StringUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\TypeUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Win32Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validate\ValidateHelper.cs" />
+  </ItemGroup>
+</Project>

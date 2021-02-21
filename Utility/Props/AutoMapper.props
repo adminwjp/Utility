@@ -1,0 +1,15 @@
+<Project>
+  <!-- net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'">
+    <PackageReference Include="AutoMapper" Version="4.2.1" />
+  </ItemGroup>
+  <!--  兼容  IdentityServer4.EntityFramework.Storage -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48' OR '$(TargetFramework)' == 'netcoreapp2.0' OR '$(TargetFramework)' == 'netcoreapp2.1' OR '$(TargetFramework)' == 'netcoreapp2.2' OR '$(TargetFramework)' == 'netcoreapp3.0' OR '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'">
+    <!--<PackageReference Include="AutoMapper" Version="10.1.1" />-->
+    <!-- 不使用最低版本 不然 注解 无法 使用  -->
+    <!--<PackageReference Include="AutoMapper" Version="6.2.2" />-->
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+<Project>
+  <!-- zinkin net45 - net48 netcoreapp2.0 - net5.0  netstandard1.4 - netstandard2.1 -->
+  <!--  NET45 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45' ">
+    <PackageReference Include="zipkin4net" Version="1.1.1" />
+     <PackageReference Include="zipkin4net.middleware.owin" Version="1.1.1" />
+  </ItemGroup>
+  
+  <!--  NET451 - NET48 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'  OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48' ">
+    <PackageReference Include="zipkin4net" Version="1.5.0" />
+    <PackageReference Include="zipkin4net.middleware.owin" Version="1.5.0" />
+  </ItemGroup>
+  
+  <!--  netcoreapp2.0 - net5.0 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0' OR '$(TargetFramework)' == 'netcoreapp2.1' OR '$(TargetFramework)' == 'netcoreapp2.2'  OR '$(TargetFramework)' == 'netcoreapp3.0' OR '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0' ">
+    <PackageReference Include="zipkin4net" Version="1.5.0" />
+  </ItemGroup>
+  
+  <!--  netstandard1.4 - netstandard2.1 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4' OR '$(TargetFramework)' == 'netstandard1.5' OR '$(TargetFramework)' == 'netstandard1.6' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1' ">
+    <PackageReference Include="zipkin4net" Version="1.5.0" />
+  </ItemGroup>
+
+</Project>

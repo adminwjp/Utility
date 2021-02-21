@@ -1,0 +1,146 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!--Grpc net45-net48 netcorepp2.0-net5.0 netstandard2.0 -netstandard2.1 -->
+  <Import Project="Props\Grpc.props" />
+  <!-- MediatR   net45 - net48  netcoreapp2.0 - net5.0  netstandard1.3 - netstandard2.1 -->
+  <Import Project="Props\MediatR.props" />
+    <!-- Serilog   net45 - net48  netcoreapp2.0 - net5.0  netstandard1.3 - netstandard2.1 -->
+  <Import Project="Props\Serilog.props" />
+  <!-- Serilog   net45 - net48  netcoreapp2.0 - net5.0  netstandard1.6 - netstandard2.1 -->
+  <Import Project="Props\FluentValidation.props" />
+  <!-- log4net   net10 - net48  netcoreapp1.0 - net5.0  netstandard1.3 - netstandard2.1 -->
+  <Import Project="Props\Log4net.props" />
+  <!-- NLog  net35 - net48  netcoreapp1.0 - net5.0 netstandard1.3 - netstandard2.1  -->
+  <Import Project="Props\NLog.props" />
+   <!-- zinkin net45 - net48 netcoreapp2.0 - net5.0  netstandard1.4 - netstandard2.1 -->
+  <Import Project="Props\zipkin4net.props" />
+  <!-- consul  NET45 - NET48  netcoreapp2.0 - net5.0 netstandard1.3 - netstandard2.1 -->
+  <Import Project="Props\Consul.props" />
+
+  <!-- message queue net10 - net48  -->
+  <Import Project="Props\Messaging.props" />
+   <!-- iis  net10 - net48  -->
+  <Import Project="Props\IIS.props" />
+  <!-- excel net10 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\AsposeCells.props" />
+  <!-- excel word pdf ... net40 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\NPOI.props" />
+  
+  <!-- autofac net20 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\RSA.props" />
+
+  <!-- autofac net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\Autofac.props" />
+  <!-- dapper net40 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\Dapper.props" />
+  <!-- AutoMapper net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\AutoMapper.props" />
+  <!-- Elasticsearch net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\Elasticsearch.props" />
+  <!-- ZooKeeperNetEx net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\ZooKeeperNetEx.props" />
+  <!-- kafka net451 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\kafka.props" />
+   <!-- Redis net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\Redis.props" />
+   <!-- Quartz net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\Quartz.props" />
+  <!-- thrift rpc net461 - net48 -->
+  <Import Project="Props\Thrift.props" />
+  <!-- Polly net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\Polly.props" />
+   <!-- NHibernate net40 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\NHibernate.props" />
+   <!-- SharpZipLib net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\SharpZipLib.props" />
+  <!-- ServiceBus net451 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\ServiceBus.props" />
+  <!-- RabbitMQ net451 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\RabbitMQ.props" />
+  <!-- MongoDB net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\MongoDB.props" />
+  <!-- HtmlAgilityPack net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\HtmlAgilityPack.props" />
+  <Import Project="..\shared\Utility.Shared\Utility.Shared.projitems" Label="Shared" />
+  <!-- Ef net40 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\Ef.props" />
+  <PropertyGroup>
+    <!--<TargetFrameworks>net10;net11;net20;net30;net35;net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;netcoreapp1.0;
+    netcoreapp1.1;netcoreapp1.2;netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1;net5.0;
+    netstandard1.0;netstandard1.1;netstandard1.2;netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6;netstandard2.0;netstandard2.1;</TargetFrameworks>-->
+
+      <!-- dotnet build net30 net35 error, vs pass -->
+  <!--
+    <TargetFrameworks>net20;net30;net35;net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;netcoreapp1.0;
+    netcoreapp1.1;netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1;net5.0;netstandard1.0;netstandard1.1;netstandard1.2;
+    netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6;netstandard2.0;netstandard2.1;</TargetFrameworks>
+	-->
+	
+	   <!--<TargetFrameworks>net20;net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;netcoreapp1.0;
+    netcoreapp1.1;netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1;net5.0;netstandard1.0;netstandard1.1;netstandard1.2;
+    netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6;netstandard2.0;netstandard2.1;</TargetFrameworks>-->
+	
+    <!--<TargetFrameworks>net45;net472;netcoreapp2.0;netcoreapp3.1;netstandard2.0;</TargetFrameworks>-->
+    
+    <TargetFrameworks>net48;net5.0;</TargetFrameworks>
+    <AssemblyName>Utility</AssemblyName>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>e:\work\Package\Utility\</OutputPath>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <RepositoryUrl>e:\work\Package\Utility\</RepositoryUrl>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageProjectUrl>e:\work\Package\Utility\</PackageProjectUrl>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DocumentationFile></DocumentationFile>
+    <DocumentationFile>e:\work\Package\Utility\Utility.xml</DocumentationFile>
+    <Version>1.0.0.1</Version>
+    <Description>支持redis,es,mongodb,nhibernate,automapper,autofac,autofac annotation、ef、dapper、aspose、wcf、remote、aspx、ashx、asmx、enterpriselibrary、以及其他 包....(&gt;=NET45 &gt;=NETCOREAPP20 &gt;=NETSTANDARD20)</Description>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <Authors>wjp</Authors>
+    <Company>wjp</Company>
+
+
+    <!-- Package contains only the final .nuspec file with a few listed dependencies. -->
+    <!--<GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);PopulateNuspec</GenerateNuspecDependsOn>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeContentInPack>false</IncludeContentInPack>
+    <IncludeSource>false</IncludeSource>
+    <IncludeSymbols>false</IncludeSymbols>
+    <NuspecFile>$(MSBuildProjectName).nuspec</NuspecFile>
+    <MicrosoftExtensionsApiDescriptionServerPackageVersion>1.0.0.0</MicrosoftExtensionsApiDescriptionServerPackageVersion>-->
+  </PropertyGroup>
+  
+  <!--<Target Name="PopulateNuspec">
+    <PropertyGroup>
+      <NuspecProperties>
+        id=$(PackageId);
+        authors=$(Authors);
+        configuration=$(Configuration);
+        description=$(PackageDescription);
+        projectUrl=$(PackageProjectUrl);
+        repositoryType=$(RepositoryType);
+        repositoryUrl=$(RepositoryUrl);
+        tags=$(PackageTags.Replace(';', ' '));
+        targetPath=$(TargetPath);
+        version=$(PackageVersion);
+        microsoftExtensionsApiDescriptionServerPackageVersion=$(MicrosoftExtensionsApiDescriptionServerPackageVersion);
+      </NuspecProperties>
+    </PropertyGroup>
+  </Target>-->
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net20|AnyCPU'">
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <Optimize>true</Optimize>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Utility.Simple\Utility.Simple.csproj" />
+  </ItemGroup>
+
+ 
+
+</Project>

@@ -1,0 +1,44 @@
+<Project>
+  <!-- net40 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+
+  <!-- net45 - net46 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'">
+    <PackageReference Include="Dapper.Linq" Version="3.0.3" />
+    <PackageReference Include="DapperExtensions.DotnetCore" Version="1.0.1" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45' ">
+    <PackageReference Include="Dapper.SimpleCRUD" Version="1.13.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'">
+    <PackageReference Include="Dapper.SimpleCRUD" Version="2.1.0" />
+
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
+    <PackageReference Include="Dapper.SimpleCRUD" Version="1.13.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45'  ">
+    <PackageReference Include="Dapper" Version="1.50.2" />
+  </ItemGroup>
+  
+
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'">
+    <PackageReference Include="Dapper" Version="1.60.6" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48' OR '$(TargetFramework)' == 'netcoreapp2.0' OR '$(TargetFramework)' == 'netcoreapp2.1' OR '$(TargetFramework)' == 'netcoreapp2.2' OR '$(TargetFramework)' == 'netcoreapp3.0' OR '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="Dapper" Version="2.0.78" />
+    <PackageReference Include="Dapper.SimpleCRUD" Version="2.2.0.1" />
+    <PackageReference Include="Dapper.Linq" Version="3.0.3" />
+    <PackageReference Include="DapperExtensions.NetCore" Version="2.0.7" />
+    <!-- dapper linq  Dapper 包已存在 报错 找不到哪个  不能跟上面的混合使用不然报错 二选一 要么不用 -->
+    <!--<PackageReference Include="Kogel.Dapper.Extension" Version="3.2.0.1" />-->
+    <!--<PackageReference Include="Kogel.Dapper.Extension.MySql" Version="3.2.0.1" />-->
+  </ItemGroup>
+
+
+</Project>

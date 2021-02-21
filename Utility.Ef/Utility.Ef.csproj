@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Ef net40 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  <Import Project="Props\Ef.props" />
+  <PropertyGroup>
+	   <!--<TargetFrameworks>net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1;net5.0;
+     netstandard2.0;netstandard2.1;</TargetFrameworks>-->
+    <TargetFrameworks>netstandard2.0; </TargetFrameworks>
+    <AssemblyName>Utility.Ef</AssemblyName>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>e:\work\Package\Utility.Ef\</OutputPath>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <RepositoryUrl>e:\work\Package\Utility.Ef\</RepositoryUrl>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageProjectUrl>e:\work\Package\Utility.Ef\</PackageProjectUrl>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DocumentationFile></DocumentationFile>
+    <DocumentationFile>e:\work\Package\Utility.Ef\Utility.Ef.xml</DocumentationFile>
+    <Version>1.0.0.1</Version>
+    <Description>支持ef core mysql sqlite sqlserver postgre oracle</Description>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <Authors>wjp</Authors>
+    <Company>wjp</Company>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utility.Simple\Utility.Simple.csproj" />
+  </ItemGroup>
+
+</Project>

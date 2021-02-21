@@ -1,0 +1,15 @@
+<Project>
+  <!-- NLog start net35 - net48  netcoreapp1.0 - net5.0 netstandard1.3 - netstandard2.1  -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'  OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48' ">
+    <PackageReference Include="NLog" Version="4.7.6" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="  '$(TargetFramework)' == 'netcoreapp1.0' OR '$(TargetFramework)' == 'netcoreapp1.1' OR '$(TargetFramework)' == 'netcoreapp1.2'  OR '$(TargetFramework)' == 'netcoreapp2.0' OR '$(TargetFramework)' == 'netcoreapp2.1' OR '$(TargetFramework)' == 'netcoreapp2.2' OR '$(TargetFramework)' == 'netcoreapp3.0' OR '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="NLog" Version="4.7.6" />
+  </ItemGroup>
+    
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'  OR '$(TargetFramework)' == 'netstandard1.4' OR '$(TargetFramework)' == 'netstandard1.5'  OR '$(TargetFramework)' == 'netstandard1.6'   OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1' ">
+    <PackageReference Include="NLog" Version="4.7.6" />
+  </ItemGroup>
+
+</Project>

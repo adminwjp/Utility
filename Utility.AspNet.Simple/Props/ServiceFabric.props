@@ -1,0 +1,12 @@
+<Project>
+  <!-- ServiceFabric  netcoreapp2.0 - net5.0  -->
+
+
+
+  <!--  netcoreapp2.0 - net5.0 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0' OR '$(TargetFramework)' == 'netcoreapp2.1' OR '$(TargetFramework)' == 'netcoreapp2.2'  OR '$(TargetFramework)' == 'netcoreapp3.0' OR '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0' ">
+    <PackageReference Include="Microsoft.ServiceFabric" Version="7.2.445" />
+    <PackageReference Include="Microsoft.ServiceFabric.Services" Version="4.2.445" />
+    <PackageReference Include="Microsoft.ServiceFabric.AspNetCore.Kestrel" Version="4.2.445" />
+  </ItemGroup>
+</Project>

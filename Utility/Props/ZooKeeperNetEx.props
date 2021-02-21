@@ -1,0 +1,14 @@
+<Project>
+  <!-- net45 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46'">
+    <PackageReference Include="ZooKeeperNetEx" Version="3.4.9.3" />
+    <PackageReference Include="ZooKeeperNetEx.Recipes" Version="3.4.9.3" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48' OR '$(TargetFramework)' == 'netcoreapp2.0' OR '$(TargetFramework)' == 'netcoreapp2.1' OR '$(TargetFramework)' == 'netcoreapp2.2' OR '$(TargetFramework)' == 'netcoreapp3.0' OR '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="ZooKeeperNetEx" Version="3.4.12.4" />
+    <PackageReference Include="ZooKeeperNetEx.Recipes" Version="3.4.12.4" />
+  </ItemGroup>
+
+</Project>

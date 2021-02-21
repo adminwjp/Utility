@@ -1,0 +1,100 @@
+<Project>
+  <!-- net40 - net48 netcoreapp2.0 - net5.0 netstandard2.0 - netstandard2.1 -->
+  
+  <!-- ef framework -->
+  <!-- net40 - net48(net461 - net48 可以使用netstandard2.0 ef core)  -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net48' ">
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Z.EntityFramework.Plus.EF6" Version="1.12.27" />
+    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Data.dll" Version="3.1.0" />
+    <!--<PackageReference Include="EntLibContrib.Data" Version="5.0.505" />-->
+    <!--<PackageReference Include="EntLibContrib.Data.MySql" Version="5.0.505" />
+     <PackageReference Include="MySql.Data" Version="8.0.21" />-->
+    <PackageReference Include="EntityFramework.SqlServerCompact" Version="6.4.4" />
+  </ItemGroup>
+  
+  <!-- ef core -->
+  <!--  兼容 asp.net core ef core 2.0 - 2.2 -->
+   <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' OR '$(TargetFramework)' == 'netcoreapp2.1' OR '$(TargetFramework)' == 'netcoreapp2.2' ">
+     <!-- <PackageReference Include="MySql.Data" Version="8.0.22" /> -->
+     
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.1.14" />
+	  <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="2.0.62" />
+			
+	<!--
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.14">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.14" />
+     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.1" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.14" />
+     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.1.1" />
+	-->
+	<!-- 版本不匹配  -->
+    <!--<PackageReference Include="Oracle.EntityFrameworkCore" Version="2.19.30" />-->
+   </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' OR '$(TargetFramework)' == 'netcoreapp2.1'  OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'  ">
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
+    <!--<PackageReference Include=" Microsoft.AspNetCore.Http" Version="2.1.1" />-->
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.2'  ">
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <!--<PackageReference Include=" Microsoft.AspNetCore.Http" Version="2.2.0" />-->
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' OR  '$(TargetFramework)' == 'netcoreapp3.1'   OR  '$(TargetFramework)' == 'net5.0'  ">
+    <!-- asp.net core 框架自带的 -->
+    <!--<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="3.1.0" />-->
+     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <!--<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="3.0.0-preview4-19121-14" />-->
+    <!-- nuget 包某类 竟然找不到,引用本地的可以,算了-->
+    <!--<PackageReference Include=" Microsoft.AspNetCore.Http" Version="3.0.0-preview4-19121-14" />-->
+  </ItemGroup>
+
+
+  <ItemGroup Condition="  '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp3.0' OR '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0' OR  '$(TargetFramework)' == 'netstandard2.1'">
+    <!--<PackageReference Include="MySql.Data" Version="8.0.22" />-->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.10" />
+    <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="3.1.5" />
+
+    <!-- 统一 ef 版本 每个数据库 驱动 最新版本所依赖版本不一致 -->
+	<!--   
+   <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="3.19.80" />
+	-->
+  </ItemGroup>
+    <!-- ef core 3.0 - 5.0 netstandard2.0 -  netstandard2.1 版本太高 有些数据库不支持 兼容  -->
+
+ <ItemGroup Condition="  '$(TargetFramework)' == 'netcoreapp3.0' OR '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0' OR  '$(TargetFramework)' == 'netstandard2.1' ">
+   <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.10" />
+   <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="3.1.5" />
+   <!-- 
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.0" />
+    <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="5.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+	-->
+
+    <!--<Reference Include="Microsoft.AspNetCore.Http.Abstractions">
+      <HintPath>F:\Nuget\Package\microsoft.aspnetcore.http.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http">
+      <HintPath>F:\Nuget\Package\microsoft.aspnetcore.http\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>-->
+
+  </ItemGroup>
+
+</Project>

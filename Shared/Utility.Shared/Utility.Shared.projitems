@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>8fa75a51-a3bf-4add-a256-ffc889d02582</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Utility.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Consul\ConsulHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Consul\ConsulServiceProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Es\ElasticsearchHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Ioc\AutofacIocManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Ioc\NetCoreIocManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\ZipHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logs\Log4Log.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logs\NLogLog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mongodb\MongHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Nopi\ExcelExport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Nopi\WordUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObjectMapping\AutoMapperObjectMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parse\DefaultParse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TemplateHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Timer\JobTask.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Timer\QuartzHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValidateCode\ValidateCodeHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Zipkin\ZipkinHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Zk\ZooKeeperHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)error.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)log4.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Xml\" />
+  </ItemGroup>
+</Project>
